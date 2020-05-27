@@ -72,7 +72,7 @@ def load_data(city, month, day):
     print('-'*40)
     return df
   
-def time_stats(df):
+def display_time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
@@ -94,7 +94,7 @@ def time_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def station_stats(df):
+def display_station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
@@ -128,7 +128,7 @@ def trip_duration_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def user_stats(df, city):
+def display_user_stats(df, city):
     """Displays statistics on bikeshare users."""
     
     print('\nCalculating User Stats...\n')
@@ -142,9 +142,9 @@ def user_stats(df, city):
         print('Gender: ', df['Gender'].value_counts())
 
         # TO DO: Display earliest, most recent, and most common year of birth
-        print('Earliest year of birth: ', int(df['Birth Year'].min()))
-        print('Most recent year of birth: ', int(df['Birth Year'].max()))
-        print('Most common year of birth: ', int(df['Birth Year'].mode()))
+        print('Earliest birth year: ', int(df['Birth Year'].min()))
+        print('Most recent birth year: ', int(df['Birth Year'].max()))
+        print('Most common birth year: ', int(df['Birth Year'].mode()))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -165,17 +165,17 @@ def wait_for_yes_no(text_to_print):
 def display_data(df):
     """ Displays raw data upon users request."""
     a = 0
-    b = 5
+    b = 10
     user_iput = wait_for_yes_no('\nWould you like to see raw data? Enter yes or no.\n')
     if user_iput == 'no':
         return
     print(df.iloc[a:b])
     while True:
-        user_iput = wait_for_yes_no('\nWould you like to see more 5 lines of raw data?? Enter yes or no.\n')
+        user_iput = wait_for_yes_no('\nWould you like to see more 10 lines of raw data?? Enter yes or no.\n')
         if user_iput == 'no':
             break
-        a += 5
-        b += 5
+        a += 10
+        b += 10
         print(df.iloc[a:b])
 
 def main():
@@ -183,10 +183,10 @@ def main():
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
-        time_stats(df)
-        station_stats(df)
+        display_time_stats(df)
+        display_station_stats(df)
         trip_duration_stats(df)
-        user_stats(df, city)
+        display_user_stats(df, city)
         display_data(df)
 
 
