@@ -165,17 +165,17 @@ def wait_for_yes_no(text_to_print):
 def display_data(df):
     """ Displays raw data upon users request."""
     a = 0
-    b = 5
+    b = 10
     user_iput = wait_for_yes_no('\nWould you like to see raw data? Enter yes or no.\n')
     if user_iput == 'no':
         return
     print(df.iloc[a:b])
     while True:
-        user_iput = wait_for_yes_no('\nWould you like to see more 5 lines of raw data?? Enter yes or no.\n')
+        user_iput = wait_for_yes_no('\nWould you like to see more 10 lines of raw data?? Enter yes or no.\n')
         if user_iput == 'no':
             break
-        a += 5
-        b += 5
+        a += 10
+        b += 10
         print(df.iloc[a:b])
     
         
