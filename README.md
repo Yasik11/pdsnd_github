@@ -11,7 +11,7 @@ Project allow to analyse bikeshare data from Chicago, New York City and Washingt
 chicago.csv , new_york_city.csv, washington.csv
 
 ### Credits
-Resources
+Resources used
 
 1) None in Python
 https://stackoverflow.com/questions/3289601/null-object-in-python
