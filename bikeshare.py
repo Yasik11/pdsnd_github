@@ -177,13 +177,6 @@ def display_data(df):
         a += 5
         b += 5
         print(df.iloc[a:b])
-    
-        
-   
-
-    
-
-
 
 def main():
     while True:
