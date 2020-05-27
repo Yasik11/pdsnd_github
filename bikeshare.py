@@ -72,7 +72,7 @@ def load_data(city, month, day):
     print('-'*40)
     return df
   
-def time_stats(df):
+def display_time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
@@ -94,7 +94,7 @@ def time_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def station_stats(df):
+def display_station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
@@ -128,7 +128,7 @@ def trip_duration_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def user_stats(df, city):
+def display_user_stats(df, city):
     """Displays statistics on bikeshare users."""
     
     print('\nCalculating User Stats...\n')
@@ -190,10 +190,10 @@ def main():
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
-        time_stats(df)
-        station_stats(df)
+        display_time_stats(df)
+        display_station_stats(df)
         trip_duration_stats(df)
-        user_stats(df, city)
+        display_user_stats(df, city)
         display_data(df)
 
 
